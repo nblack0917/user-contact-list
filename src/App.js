@@ -17,7 +17,7 @@ class App extends Component {
       .then( res => {
         const arrayOfUsers = res.data.results
         this.setState({ arrayOfUsers })
-        console.log(this.state.arrayOfUsers)
+        // console.log(this.state.arrayOfUsers)
       })
   }
 

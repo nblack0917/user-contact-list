@@ -17,19 +17,19 @@ const UserCard = (props) => {
 
     if (isActive) {
         return (
-            <li className="userInfo" >
+            <li className="userInfo">
                 <div className="basicUserInfo">
                     <img src={props.user.picture.large}></img>
-                    <h2 style={{color: "white"}}>{props.user.name.first} {props.user.name.last}</h2>
+                    <h2 className="userNameButton" style={{color: "white"}}>{props.user.name.first}<br></br>{props.user.name.last}</h2>
                 </div>
-                <button style={buttonStyle} onClick={handleClick}>Show Details</button>
+                <button className="userNameButton" style={buttonStyle} onClick={handleClick}>Show Details</button>
             </li>
         )
     } else {
         return (
-            <li className="userInfo">
+            <li className="userInfoExtended">
                 <div className="basicUserInfo_extend">
-                    <img src={props.user.picture.medium}></img>
+                    {/* <img src={props.user.picture.medium}></img> */}
                     <h2 style={{color: "white"}}>{props.user.name.first} {props.user.name.last}</h2>
                 </div>
                 <div className="extendedUserInfo">

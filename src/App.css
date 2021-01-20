@@ -43,19 +43,51 @@
 
 .userInfo {
   list-style: none;
-  background: rgb(192, 192, 192);
-  width: 500px;
-  border-radius: 10px;
+  background: rgba(192, 192, 192, 0);
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
   margin: 20px auto;
+  box-shadow: 5px 5px rgba(14, 14, 14, 0.4);
+  transition: height 1s, background 1s;
 }
 
-.basicUserInfo {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
+.userNameButton {
+  opacity: 0;
+  transition: opacity 0.25;
+  /* transition-delay: 0.75s; */
 }
-.basicUserInfo > img,
-.basicUserInfo_extend > img {
+
+.userInfo:hover {
+  height: 460px;
+  background: rgba(192, 192, 192, 1);
+}
+
+.userInfo:hover .userNameButton {
+  opacity: 1;
+  transition-duration: 1s;
+  transition-delay: 0.5s;
+}
+
+.basicUserInfo > img {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.userInfoExtended {
+  list-style: none;
+  background: rgb(192, 192, 192);
+  height: 300px;
+  border-radius: 15px;
+  margin: 20px auto;
+  box-shadow: 5px 5px rgba(14, 14, 14, 0.4);
+  width: 600px;
+  height: auto;
+}
+
+.basicUserInfo_extend > h2 {
   margin: 10px 20px;
   padding-top: 10px;
 }
@@ -64,8 +96,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.extendedUserInfo {
-  padding-bottom: 20px;
 }
