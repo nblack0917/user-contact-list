@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Flip from 'react-reveal/Flip';
+import Rotate from 'react-reveal/Rotate';
 
 const UserCard = (props) => {
 
@@ -17,6 +19,7 @@ const UserCard = (props) => {
 
     if (isActive) {
         return (
+            <Rotate>
             <li className="userInfo">
                 <div className="basicUserInfo">
                     <img src={props.user.picture.large}></img>
@@ -24,9 +27,11 @@ const UserCard = (props) => {
                 </div>
                 <button className="userNameButton" style={buttonStyle} onClick={handleClick}>Show Details</button>
             </li>
+            </Rotate>
         )
     } else {
         return (
+                <Flip left>
             <li className="userInfoExtended">
                 <div className="basicUserInfo_extend">
                     {/* <img src={props.user.picture.medium}></img> */}
@@ -46,7 +51,10 @@ const UserCard = (props) => {
                 </div>
                 <button style={buttonStyle} onClick={handleClick}>Hide Details</button>
             </li>
+                </Flip>
         )}
 }
 
 export default UserCard
+
+
